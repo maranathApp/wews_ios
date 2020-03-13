@@ -12,5 +12,14 @@
 "common.noInternet" = "There is no internet 📡. Please check this out and try again later.";
 "common.okay" = "Got it 👍🏼";
 "common.cancel" = "Cancel";
+"common.close" = "Close";
 
 "common.error.title" = "😬 OOPS 😬";
+
+// MARK: - MASTER
+
+"master.readArticle.buttonTitle" = "Read article";
+
+// MARK: - DETAIL
+
+"detail.unselectedCell.title" = "Heyyy 👋🏾, What are you waiting to select a news to read? You're just one step away 😎";

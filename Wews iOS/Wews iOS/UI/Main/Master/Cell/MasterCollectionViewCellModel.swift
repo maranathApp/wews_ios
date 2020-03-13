@@ -1,5 +1,5 @@
 //
-//  MasterCollectionViewModel.swift
+//  MasterCollectionViewCellModel.swift
 //  Wews iOS
 //
 //  Created by Frezy Mboumba on 3/6/20.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 
-final class MasterCollectionViewModel {
+final class MasterCollectionViewCellModel {
 
     // MARK: - INTERNAL ATTRIBUTES
 

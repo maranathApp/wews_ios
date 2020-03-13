@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if UIDevice.type == .iPhone {
             return .portrait
         } else {
-            return .landscapeRight
+            return [.landscapeRight, .landscapeLeft]
         }
     }
 

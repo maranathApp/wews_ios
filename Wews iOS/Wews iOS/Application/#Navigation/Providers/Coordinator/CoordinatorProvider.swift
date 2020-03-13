@@ -10,6 +10,5 @@ import UIKit
 
 struct CoordinatorProvider {
     static var app: AppCoordinator { AppCoordinator() }
-    static var onBoarding: OnBoardingCoordinator { OnBoardingCoordinator() }
     static var main: MainCoordinator { MainCoordinator() }
 }

@@ -2,8 +2,8 @@
 //  DetailViewModel.swift
 //  Wews iOS
 //
-//  Created by Frezy Mboumba on 2/13/20.
-//  Copyright © 2020 MaranathApp. All rights reserved.
+//  Created by Frezy Mboumba on 3/13/20.
+//  Copyright © 2020 Maranathapp. All rights reserved.
 //
 
 import Foundation
@@ -17,17 +17,31 @@ final class DetailViewModel: ViewModelling, ObservableObject {
 
     @Published var title: String?
     @Published var description: String?
-    @Published var link: URL?
+    @Published var imageURL: URL?
+    @Published var readArticleTitle: String?
+    @Published var unselectedCellTitle: String?
+
+    var link: URL?
+
+    var cancellables = Set<AnyCancellable>()
 
     // MARK: - INITIALIZERS
 
-    init() {}
+    init() {
+        self.readArticleTitle = "master.readArticle.buttonTitle".localized
+        self.unselectedCellTitle = "detail.unselectedCell.title".localized
+    }
 
     // MARK: - INTERNAL METHODS
 
-    func setUp(with title: String, description: String, link: URL?) {
+    func setUp(with title: String, imageURL: URL?, description: String, link: URL?) {
         self.title = title
-        self.description = description
+        self.imageURL = imageURL
         self.link = link
+        self.description = description
+    }
+
+    func getWebViewModel() -> WebViewModel {
+        return WebViewModel(title: title ?? "", link: link)
     }
 }

@@ -11,7 +11,7 @@ import UIComponentKit
 import Combine
 
 final class MasterCollectionViewCell: UICollectionViewCell, SetupableView {
-    typealias SetupModel = MasterCollectionViewModel
+    typealias SetupModel = MasterCollectionViewCellModel
 
     // MARK: - @IBOUTLETS
 

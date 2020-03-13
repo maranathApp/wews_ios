@@ -6,7 +6,7 @@
 //  Copyright © 2020 MaranathApp. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIDevice
 
 enum DeviceModel: String {
     //Simulator

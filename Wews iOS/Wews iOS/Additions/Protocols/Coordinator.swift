@@ -8,7 +8,6 @@
 
 import UIKit
 
-#warning("UnitTest BaseCoordinator & RootCoordinator protocols")
 protocol BaseCoordinator: class {
     var childCoordinators: [Coordinator] { get set }
     func start()

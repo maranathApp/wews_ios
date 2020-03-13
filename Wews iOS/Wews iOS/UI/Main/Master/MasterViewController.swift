@@ -10,6 +10,10 @@ import UIKit
 import UIComponentKit
 import Combine
 
+protocol MasterViewControllerDelegate: class {
+    func didPresentDetailViewController(_ vc: MasterViewController, detailViewModel: DetailViewModel)
+}
+
 final class MasterViewController: CollectionViewController<MasterCollectionViewCell, MasterViewModel> {
 
     // MARK: - PRIVATE ATTRIBUTES
@@ -62,6 +66,10 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
         return view
     }()
 
+    // MARK: - INTERNAL ATTRIBUTES
+
+    weak var delegate: MasterViewControllerDelegate?
+
     // MARK: - LIFE CYCLE METHODS
 
     override func viewDidLoad() {
@@ -82,8 +90,6 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
         if let split = splitViewController,
             let detailViewController = (split.viewControllers[split.viewControllers.count-1] as? UINavigationController)?.topViewController as? DetailViewController {
             self.detailViewController = detailViewController
-        } else {
-            self.detailViewController = ViewControllerProvider.Main.detail
         }
 
         viewModel.loadData()
@@ -151,16 +157,11 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard viewModel.hasNetwork else {
             notificationFeedbackGenerator.notificationOccurred(.error)
+
             return presentAlertController(title: viewModel.alertTitle, message: viewModel.noNetworkMessage, cancelActionTitle: viewModel.alertOkayButtonTitle)
         }
 
-        let item = viewModel.getItem(for: indexPath)
-        detailViewController?.viewModel.setUp(with: item.title ?? "", description: item.description, link: item.link)
-
-        if UIDevice.type == .iPhone, let detailViewController = self.detailViewController {
-            // This navigation should have normally be done inside the respective coordinator but for UISplitViewController related reasons and for simplicity, I decided to do it here.
-            navigationController?.pushViewController(detailViewController, animated: true)
-        }
+        delegate?.didPresentDetailViewController(self, detailViewModel: viewModel.getDetailViewModel(for: indexPath))
     }
 
     // MARK: UICOLLECTIONVIEWDELEGATEFLOWLAYOUT

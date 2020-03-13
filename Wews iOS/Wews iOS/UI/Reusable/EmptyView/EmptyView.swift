@@ -22,6 +22,7 @@ final class EmptyView: UIView, SetupableView {
     // MARK: - @IBOUTLETS
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var reloadButton: UIButton!
 
     // MARK: - INTERNAL METHODS
 

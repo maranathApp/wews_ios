@@ -13,12 +13,12 @@ final class AppCoordinator: Coordinator {
     // MARK: - INTERNAL ATTRIBUTES
 
     var childCoordinators: [Coordinator] = []
-    var rootViewController: UIViewController { viewControllerToPresent ?? UIViewController() }
+    var rootViewController: UIViewController { viewControllerToPresent }
 
     // MARK: - PRIVATE METHODS
 
-    private var viewControllerToPresent: UIViewController?
-
+    private var viewControllerToPresent: UIViewController!
+    
     // MARK: - INTERNAL METHODS
 
     func start() {
@@ -32,12 +32,5 @@ final class AppCoordinator: Coordinator {
         mainCoordinator.start()
         viewControllerToPresent = mainCoordinator.rootViewController
         childCoordinators.append(mainCoordinator)
-    }
-
-    private func showOnBoardingCoordinator() {
-        let onBoardingCoordinator = CoordinatorProvider.onBoarding
-        onBoardingCoordinator.start()
-        viewControllerToPresent = onBoardingCoordinator.rootViewController
-        childCoordinators.append(onBoardingCoordinator)
     }
 }

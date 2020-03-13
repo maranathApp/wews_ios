@@ -40,9 +40,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
+                <outlet property="reloadButton" destination="7yn-oB-Qkt" id="xnE-x7-RXT"/>
                 <outlet property="titleLabel" destination="Cmv-aJ-CWU" id="2yx-CH-WXH"/>
             </connections>
-            <point key="canvasLocation" x="139" y="141"/>
+            <point key="canvasLocation" x="-149" y="27"/>
         </view>
     </objects>
 </document>

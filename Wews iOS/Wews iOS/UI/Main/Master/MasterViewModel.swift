@@ -15,19 +15,20 @@ struct MasterViewModelInputs {
     let RSSFeedService: RSSFeedServicing
 }
 
-protocol MasterViewModelling: ListViewModelling{
+protocol MasterViewModelling: ListViewModelling {
     var hasNetwork: Bool { get }
     func loadData()
+    func getDetailViewModel(for indexPath: IndexPath) -> DetailViewModel
 }
 
 final class MasterViewModel: MasterViewModelling, ObservableObject {
 
-    typealias ListModel = MasterCollectionViewModel
+    typealias ListModel = MasterCollectionViewCellModel
 
     // MARK: - PRIVATE ATTRIBUTES
 
     private let inputs: MasterViewModelInputs
-    private var dataSource = [MasterCollectionViewModel]()
+    private var dataSource = [MasterCollectionViewCellModel]()
 
     // MARK: - ATTRIBUTES
 
@@ -82,13 +83,23 @@ final class MasterViewModel: MasterViewModelling, ObservableObject {
                 }
             }) { [weak self] response in
                 self?.rssInformation = response
-                let dataSourceModels = response.channel.items.map({ MasterCollectionViewModel(title: $0.title, description: $0.description, link: URL(string: $0.link), imageURL: URL(string: $0.mediaContent.url)) })
+                let dataSourceModels = response.channel.items.map({ MasterCollectionViewCellModel(title: $0.title, description: $0.description, link: URL(string: $0.link), imageURL: URL(string: $0.mediaContent.url)) })
                 self?.dataSource.append(contentsOf: dataSourceModels)
         }
         .store(in: &cancellables)
     }
 
-    func getItem(for indexPath: IndexPath) -> MasterCollectionViewModel {
+    func getItem(for indexPath: IndexPath) -> MasterCollectionViewCellModel {
         return dataSource[indexPath.row]
     }
+
+    func getDetailViewModel(for indexPath: IndexPath) -> DetailViewModel {
+        return dataSource.map({ model -> DetailViewModel in
+            let detailViewModel = DetailViewModel()
+            detailViewModel.setUp(with: model.title ?? "", imageURL: model.imageURL, description: model.description, link: model.link)
+
+            return detailViewModel
+        })[indexPath.row]
+    }
 }
+ 
