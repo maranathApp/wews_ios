@@ -12,7 +12,7 @@ import Combine
 final class MasterCollectionViewModel {
 
     // MARK: - INTERNAL ATTRIBUTES
-    
+
     @Published var title: String?
     @Published var imageURL: URL?
 

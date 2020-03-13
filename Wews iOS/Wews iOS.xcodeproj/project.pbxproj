@@ -26,15 +26,25 @@
 		83067B232416ECCB00F97965 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83067B212416ECCB00F97965 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		83067B322416F2BD00F97965 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067B312416F2BD00F97965 /* MainCoordinator.swift */; };
 		83067BBF2418276D00F97965 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BBE2418276D00F97965 /* UIImageView+Extension.swift */; };
-		83067BC12418400200F97965 /* Statable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BC02418400200F97965 /* Statable.swift */; };
 		83067BD42418D42600F97965 /* UIComponentKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83067BD32418D42600F97965 /* UIComponentKit.framework */; };
 		83067BD52418D42600F97965 /* UIComponentKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 83067BD32418D42600F97965 /* UIComponentKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		83067BDB2418F9E900F97965 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BDA2418F9E900F97965 /* ErrorView.swift */; };
+		83067BDD2418FA0600F97965 /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BDC2418FA0600F97965 /* EmptyView.swift */; };
+		83067BDF2418FA3C00F97965 /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83067BDE2418FA3C00F97965 /* ErrorView.xib */; };
+		83067BE12418FB9000F97965 /* EmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83067BE02418FB9000F97965 /* EmptyView.xib */; };
+		83067BE32418FD3D00F97965 /* ErrorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BE22418FD3D00F97965 /* ErrorViewModel.swift */; };
+		83067BE52418FD4F00F97965 /* EmptyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BE42418FD4F00F97965 /* EmptyViewModel.swift */; };
+		83067BE8241901F700F97965 /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BE7241901F700F97965 /* ReachabilityHelper.swift */; };
+		83067BEB2419058700F97965 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BEA2419058700F97965 /* ViewState.swift */; };
+		83067BF024190E8E00F97965 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83067BEF24190E8E00F97965 /* LoadingView.swift */; };
+		83067BF2241912B200F97965 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 83067BF1241912B200F97965 /* LoadingView.xib */; };
+		833559EE241A2F6E00A72745 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 833559ED241A2F6E00A72745 /* Localizable.strings */; };
+		833559F2241A300900A72745 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833559F1241A300900A72745 /* String+Extension.swift */; };
 		836DAB5724110B790044D4A6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB5624110B790044D4A6 /* AppDelegate.swift */; };
 		836DAB5924110B790044D4A6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB5824110B790044D4A6 /* SceneDelegate.swift */; };
 		836DAB6024110B7B0044D4A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 836DAB5F24110B7B0044D4A6 /* Assets.xcassets */; };
 		836DAB6324110B7B0044D4A6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 836DAB6124110B7B0044D4A6 /* LaunchScreen.storyboard */; };
 		836DAB6E24110B7B0044D4A6 /* Wews_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB6D24110B7B0044D4A6 /* Wews_iOSTests.swift */; };
-		836DAB7924110B7B0044D4A6 /* Wews_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB7824110B7B0044D4A6 /* Wews_iOSUITests.swift */; };
 		836DAB9F24110E060044D4A6 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB8E24110E060044D4A6 /* AppCoordinator.swift */; };
 		836DABA124110E060044D4A6 /* OnBoardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB9224110E060044D4A6 /* OnBoardingCoordinator.swift */; };
 		836DABA224110E060044D4A6 /* CoordinatorProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAB9524110E060044D4A6 /* CoordinatorProvider.swift */; };
@@ -45,13 +55,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		836DAB6A24110B7B0044D4A6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 836DAB4B24110B790044D4A6 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 836DAB5224110B790044D4A6;
-			remoteInfo = "Wews iOS";
-		};
-		836DAB7524110B7B0044D4A6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 836DAB4B24110B790044D4A6 /* Project object */;
 			proxyType = 1;
@@ -96,8 +99,19 @@
 		83067B2D2416F0DD00F97965 /* UIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		83067B312416F2BD00F97965 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		83067BBE2418276D00F97965 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
-		83067BC02418400200F97965 /* Statable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Statable.swift; sourceTree = "<group>"; };
 		83067BD32418D42600F97965 /* UIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = UIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83067BDA2418F9E900F97965 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		83067BDC2418FA0600F97965 /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		83067BDE2418FA3C00F97965 /* ErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		83067BE02418FB9000F97965 /* EmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmptyView.xib; sourceTree = "<group>"; };
+		83067BE22418FD3D00F97965 /* ErrorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorViewModel.swift; sourceTree = "<group>"; };
+		83067BE42418FD4F00F97965 /* EmptyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyViewModel.swift; sourceTree = "<group>"; };
+		83067BE7241901F700F97965 /* ReachabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
+		83067BEA2419058700F97965 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
+		83067BEF24190E8E00F97965 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		83067BF1241912B200F97965 /* LoadingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		833559ED241A2F6E00A72745 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		833559F1241A300900A72745 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		836DAB5324110B790044D4A6 /* Wews iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wews iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		836DAB5624110B790044D4A6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		836DAB5824110B790044D4A6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,9 +121,6 @@
 		836DAB6924110B7B0044D4A6 /* Wews iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wews iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		836DAB6D24110B7B0044D4A6 /* Wews_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wews_iOSTests.swift; sourceTree = "<group>"; };
 		836DAB6F24110B7B0044D4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		836DAB7424110B7B0044D4A6 /* Wews iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Wews iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		836DAB7824110B7B0044D4A6 /* Wews_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wews_iOSUITests.swift; sourceTree = "<group>"; };
-		836DAB7A24110B7B0044D4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		836DAB8B24110D4E0044D4A6 /* Wews iOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Wews iOS.entitlements"; sourceTree = "<group>"; };
 		836DAB8E24110E060044D4A6 /* AppCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		836DAB9224110E060044D4A6 /* OnBoardingCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnBoardingCoordinator.swift; sourceTree = "<group>"; };
@@ -137,13 +148,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		836DAB7124110B7B0044D4A6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -161,7 +165,7 @@
 		83067AFC2416EBEC00F97965 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				83067BC22418437500F97965 /* ReusableViews */,
+				83067BC22418437500F97965 /* Reusable */,
 				83067B042416EC4200F97965 /* Main */,
 				83067AFE2416EC4200F97965 /* Navigation */,
 				83067B112416EC4200F97965 /* ViewControllerProvider.swift */,
@@ -237,11 +241,70 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		83067BC22418437500F97965 /* ReusableViews */ = {
+		83067BC22418437500F97965 /* Reusable */ = {
 			isa = PBXGroup;
 			children = (
+				83067BEA2419058700F97965 /* ViewState.swift */,
+				83067BEE24190E7900F97965 /* LoadingView */,
+				83067BD92418F9D500F97965 /* ErrorView */,
+				83067BD82418F9CB00F97965 /* EmptyView */,
 			);
-			path = ReusableViews;
+			path = Reusable;
+			sourceTree = "<group>";
+		};
+		83067BD82418F9CB00F97965 /* EmptyView */ = {
+			isa = PBXGroup;
+			children = (
+				83067BDC2418FA0600F97965 /* EmptyView.swift */,
+				83067BE02418FB9000F97965 /* EmptyView.xib */,
+				83067BE42418FD4F00F97965 /* EmptyViewModel.swift */,
+			);
+			path = EmptyView;
+			sourceTree = "<group>";
+		};
+		83067BD92418F9D500F97965 /* ErrorView */ = {
+			isa = PBXGroup;
+			children = (
+				83067BDA2418F9E900F97965 /* ErrorView.swift */,
+				83067BDE2418FA3C00F97965 /* ErrorView.xib */,
+				83067BE22418FD3D00F97965 /* ErrorViewModel.swift */,
+			);
+			path = ErrorView;
+			sourceTree = "<group>";
+		};
+		83067BE6241901EA00F97965 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				83067BE7241901F700F97965 /* ReachabilityHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		83067BEE24190E7900F97965 /* LoadingView */ = {
+			isa = PBXGroup;
+			children = (
+				83067BEF24190E8E00F97965 /* LoadingView.swift */,
+				83067BF1241912B200F97965 /* LoadingView.xib */,
+			);
+			path = LoadingView;
+			sourceTree = "<group>";
+		};
+		833559EF241A2FEB00A72745 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				836DABAB24110F5C0044D4A6 /* UIDevice+Extension.swift */,
+				836DABAC24110F5C0044D4A6 /* UIColor+Extension.swift */,
+				83067BBE2418276D00F97965 /* UIImageView+Extension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		833559F0241A2FF300A72745 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				833559F1241A300900A72745 /* String+Extension.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 		836DAB4A24110B790044D4A6 = {
@@ -249,7 +312,6 @@
 			children = (
 				836DAB5524110B790044D4A6 /* Wews iOS */,
 				836DAB6C24110B7B0044D4A6 /* Wews iOSTests */,
-				836DAB7724110B7B0044D4A6 /* Wews iOSUITests */,
 				836DAB5424110B790044D4A6 /* Products */,
 				830679B52416C4A700F97965 /* Frameworks */,
 			);
@@ -260,7 +322,6 @@
 			children = (
 				836DAB5324110B790044D4A6 /* Wews iOS.app */,
 				836DAB6924110B7B0044D4A6 /* Wews iOSTests.xctest */,
-				836DAB7424110B7B0044D4A6 /* Wews iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -285,15 +346,6 @@
 			path = "Wews iOSTests";
 			sourceTree = "<group>";
 		};
-		836DAB7724110B7B0044D4A6 /* Wews iOSUITests */ = {
-			isa = PBXGroup;
-			children = (
-				836DAB7824110B7B0044D4A6 /* Wews_iOSUITests.swift */,
-				836DAB7A24110B7B0044D4A6 /* Info.plist */,
-			);
-			path = "Wews iOSUITests";
-			sourceTree = "<group>";
-		};
 		836DAB8824110CF90044D4A6 /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +363,7 @@
 				836DAB5F24110B7B0044D4A6 /* Assets.xcassets */,
 				836DAB6124110B7B0044D4A6 /* LaunchScreen.storyboard */,
 				836DAB6424110B7B0044D4A6 /* Info.plist */,
+				833559ED241A2F6E00A72745 /* Localizable.strings */,
 			);
 			path = "Supporting files";
 			sourceTree = "<group>";
@@ -362,6 +415,7 @@
 			isa = PBXGroup;
 			children = (
 				836DAC82241252800044D4A6 /* Wews iOS-Bridging-Header.h */,
+				83067BE6241901EA00F97965 /* Helpers */,
 				836DABB124110F980044D4A6 /* Protocols */,
 				836DABAA24110F5C0044D4A6 /* Extensions */,
 			);
@@ -371,9 +425,8 @@
 		836DABAA24110F5C0044D4A6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				836DABAB24110F5C0044D4A6 /* UIDevice+Extension.swift */,
-				836DABAC24110F5C0044D4A6 /* UIColor+Extension.swift */,
-				83067BBE2418276D00F97965 /* UIImageView+Extension.swift */,
+				833559F0241A2FF300A72745 /* Foundation */,
+				833559EF241A2FEB00A72745 /* UIKit */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -382,7 +435,6 @@
 			isa = PBXGroup;
 			children = (
 				836DABB224110F980044D4A6 /* Coordinator.swift */,
-				83067BC02418400200F97965 /* Statable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -426,24 +478,6 @@
 			productReference = 836DAB6924110B7B0044D4A6 /* Wews iOSTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		836DAB7324110B7B0044D4A6 /* Wews iOSUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 836DAB8324110B7B0044D4A6 /* Build configuration list for PBXNativeTarget "Wews iOSUITests" */;
-			buildPhases = (
-				836DAB7024110B7B0044D4A6 /* Sources */,
-				836DAB7124110B7B0044D4A6 /* Frameworks */,
-				836DAB7224110B7B0044D4A6 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				836DAB7624110B7B0044D4A6 /* PBXTargetDependency */,
-			);
-			name = "Wews iOSUITests";
-			productName = "Wews iOSUITests";
-			productReference = 836DAB7424110B7B0044D4A6 /* Wews iOSUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -459,10 +493,6 @@
 						LastSwiftMigration = 1130;
 					};
 					836DAB6824110B7B0044D4A6 = {
-						CreatedOnToolsVersion = 11.3.1;
-						TestTargetID = 836DAB5224110B790044D4A6;
-					};
-					836DAB7324110B7B0044D4A6 = {
 						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = 836DAB5224110B790044D4A6;
 					};
@@ -483,7 +513,6 @@
 			targets = (
 				836DAB5224110B790044D4A6 /* Wews iOS */,
 				836DAB6824110B7B0044D4A6 /* Wews iOSTests */,
-				836DAB7324110B7B0044D4A6 /* Wews iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -496,17 +525,14 @@
 				836DAB6324110B7B0044D4A6 /* LaunchScreen.storyboard in Resources */,
 				836DAB6024110B7B0044D4A6 /* Assets.xcassets in Resources */,
 				83067B1B2416EC4200F97965 /* MasterCollectionViewCell.xib in Resources */,
+				833559EE241A2F6E00A72745 /* Localizable.strings in Resources */,
+				83067BF2241912B200F97965 /* LoadingView.xib in Resources */,
+				83067BDF2418FA3C00F97965 /* ErrorView.xib in Resources */,
+				83067BE12418FB9000F97965 /* EmptyView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		836DAB6724110B7B0044D4A6 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		836DAB7224110B7B0044D4A6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -522,6 +548,7 @@
 			files = (
 				83067B1C2416EC4200F97965 /* MasterCollectionViewCell.swift in Sources */,
 				836DABAE24110F5C0044D4A6 /* UIDevice+Extension.swift in Sources */,
+				83067BEB2419058700F97965 /* ViewState.swift in Sources */,
 				83067B1E2416EC4200F97965 /* ViewModelProvider+Main.swift in Sources */,
 				83067B122416EC4200F97965 /* ViewModelProvider.swift in Sources */,
 				83067B1F2416EC4200F97965 /* ViewControllerProvider+Main.swift in Sources */,
@@ -529,21 +556,27 @@
 				836DAB9F24110E060044D4A6 /* AppCoordinator.swift in Sources */,
 				836DABB324110F980044D4A6 /* Coordinator.swift in Sources */,
 				83067B322416F2BD00F97965 /* MainCoordinator.swift in Sources */,
+				83067BE32418FD3D00F97965 /* ErrorViewModel.swift in Sources */,
 				836DAB5724110B790044D4A6 /* AppDelegate.swift in Sources */,
+				83067BDD2418FA0600F97965 /* EmptyView.swift in Sources */,
 				83067B132416EC4200F97965 /* SplitViewController.swift in Sources */,
-				83067BC12418400200F97965 /* Statable.swift in Sources */,
+				83067BDB2418F9E900F97965 /* ErrorView.swift in Sources */,
 				83067B152416EC4200F97965 /* ViewControllerProvider+Navigation.swift in Sources */,
+				833559F2241A300900A72745 /* String+Extension.swift in Sources */,
 				83067B192416EC4200F97965 /* MasterViewModel.swift in Sources */,
 				836DABA124110E060044D4A6 /* OnBoardingCoordinator.swift in Sources */,
 				83067B202416EC4200F97965 /* ViewControllerProvider.swift in Sources */,
 				836DABA224110E060044D4A6 /* CoordinatorProvider.swift in Sources */,
 				836DABAF24110F5C0044D4A6 /* UIColor+Extension.swift in Sources */,
+				83067BE52418FD4F00F97965 /* EmptyViewModel.swift in Sources */,
 				83067BBF2418276D00F97965 /* UIImageView+Extension.swift in Sources */,
 				83067B162416EC4200F97965 /* ViewModelProvider+Navigation.swift in Sources */,
 				83067B1A2416EC4200F97965 /* MasterCollectionViewModel.swift in Sources */,
 				836DAB5924110B790044D4A6 /* SceneDelegate.swift in Sources */,
 				83067B1D2416EC4200F97965 /* MasterViewController.swift in Sources */,
 				83067B182416EC4200F97965 /* DetailViewModel.swift in Sources */,
+				83067BE8241901F700F97965 /* ReachabilityHelper.swift in Sources */,
+				83067BF024190E8E00F97965 /* LoadingView.swift in Sources */,
 				83067B172416EC4200F97965 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,14 +589,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		836DAB7024110B7B0044D4A6 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				836DAB7924110B7B0044D4A6 /* Wews_iOSUITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -571,11 +596,6 @@
 			isa = PBXTargetDependency;
 			target = 836DAB5224110B790044D4A6 /* Wews iOS */;
 			targetProxy = 836DAB6A24110B7B0044D4A6 /* PBXContainerItemProxy */;
-		};
-		836DAB7624110B7B0044D4A6 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 836DAB5224110B790044D4A6 /* Wews iOS */;
-			targetProxy = 836DAB7524110B7B0044D4A6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -708,7 +728,7 @@
 		836DAB7E24110B7B0044D4A6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Wews iOS/Wews iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -732,7 +752,7 @@
 		836DAB7F24110B7B0044D4A6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-3";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Wews iOS/Wews iOS.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -796,46 +816,6 @@
 			};
 			name = Release;
 		};
-		836DAB8424110B7B0044D4A6 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DS4GVW992F;
-				INFOPLIST_FILE = "Wews iOSUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maranathapp.Wews-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Wews iOS";
-			};
-			name = Debug;
-		};
-		836DAB8524110B7B0044D4A6 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = DS4GVW992F;
-				INFOPLIST_FILE = "Wews iOSUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.maranathapp.Wews-iOSUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Wews iOS";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -862,15 +842,6 @@
 			buildConfigurations = (
 				836DAB8124110B7B0044D4A6 /* Debug */,
 				836DAB8224110B7B0044D4A6 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		836DAB8324110B7B0044D4A6 /* Build configuration list for PBXNativeTarget "Wews iOSUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				836DAB8424110B7B0044D4A6 /* Debug */,
-				836DAB8524110B7B0044D4A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

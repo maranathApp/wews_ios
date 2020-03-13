@@ -103,7 +103,7 @@ class XMLStackParser: NSObject {
         ))
     }
 
-    func withCurrentElement(_ body: (inout XMLCoderElement) throws -> ()) rethrows {
+    func withCurrentElement(_ body: (inout XMLCoderElement) throws -> Void) rethrows {
         guard !stack.isEmpty else {
             return
         }

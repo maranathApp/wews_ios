@@ -99,7 +99,7 @@ struct XMLChoiceEncodingContainer<K: CodingKey>: KeyedEncodingContainerProtocol 
         let box = try encode(encoder, value)
 
         let oldSelf = self
-        let elementEncoder: (T, Key, Box) throws -> () = { _, key, box in
+        let elementEncoder: (T, Key, Box) throws -> Void = { _, key, box in
             oldSelf.container.withShared { container in
                 container.element = box
                 container.key = oldSelf.converted(key).stringValue

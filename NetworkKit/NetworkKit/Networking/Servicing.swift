@@ -2,17 +2,18 @@
 //  Servicing.swift
 //  NetworkKit
 //
-//  Created by MaranathApp on 3/05/2020.
+//  Created by Frezy VAMBE on 3/05/2020.
 //  Copyright © 2020 MaranathApp. All rights reserved.
 //
 
 import Foundation
 import Combine
 
-#warning("To be tested")
 public protocol Servicing {
     init(dataFetcher: DataFetcher)
     var dataFetcher: DataFetcher { get }
+    func tryJSONRequest<T: Decodable>(endPoint: Endpoint) -> AnyPublisher<T, Error>
+    func tryXMLRequest<T: Decodable>(endPoint: Endpoint) -> AnyPublisher<T, Error>
 }
 
 public extension Servicing {
@@ -47,7 +48,6 @@ public extension Servicing {
         return encoder
     }
 
-    #warning("To be tested")
     /// Requesting data through dataFetcher for a given endpoint using JSONDecoder
     /// - Parameter endPoint: given endpoint
     func tryJSONRequest<T: Decodable>(endPoint: Endpoint) -> AnyPublisher<T, Error> {
@@ -62,7 +62,6 @@ public extension Servicing {
         }
     }
 
-    #warning("To be tested")
     /// Requesting data through dataFetcher for a given endpoint using XMLDecoder
     /// - Parameter endPoint: given endpoint
     func tryXMLRequest<T: Decodable>(endPoint: Endpoint) -> AnyPublisher<T, Error> {

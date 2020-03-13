@@ -10,8 +10,6 @@ import Foundation
 
 extension ViewModelProvider {
     enum Navigation {
-        static var splitViewModel: SplitViewModelling {
-            return SplitViewModel()
-        }
+        static var splitViewModel: SplitViewModelling { SplitViewModel() }
     }
 }

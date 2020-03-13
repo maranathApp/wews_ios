@@ -8,7 +8,6 @@
 
 import UIKit.UICollectionView
 
-#warning("To be tested")
 public extension UICollectionView {
     func registerCell<Cell: UICollectionViewCell>(_ classType: Cell.Type, customNibName: String? = nil) {
         let nib = UINib(nibName: customNibName ?? Cell.nibName, bundle: nil)

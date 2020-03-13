@@ -15,9 +15,8 @@ final class MasterCollectionViewCell: UICollectionViewCell, SetupableView {
 
     // MARK: - @IBOUTLETS
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: LoadingImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
 
     // MARK: - ATTRIBUTES
 
@@ -28,27 +27,21 @@ final class MasterCollectionViewCell: UICollectionViewCell, SetupableView {
     override func prepareForReuse() {
         super.prepareForReuse()
 
-        imageView.image = nil
-        indicatorView.startAnimating()
+        imageView.reuse()
         cancellables.removeAll()
     }
 
     // MARK: - METHODS
 
     func setup(with viewModel: SetupModel) {
-        imageView.load(from: viewModel.imageURL) { [weak self] error in
-            DispatchQueue.main.async {
-                self?.indicatorView.stopAnimating()
-                if error != nil {
-                    self?.imageView.image = UIImage(named: "placeholder.error")
-                }
-            }
-        }
-        
+        viewModel
+            .$imageURL
+            .assign(to: \.imageURL, on: imageView)
+            .store(in: &cancellables)
+
         viewModel
             .$title
             .assign(to: \.text, on: titleLabel)
             .store(in: &cancellables)
-
     }
 }

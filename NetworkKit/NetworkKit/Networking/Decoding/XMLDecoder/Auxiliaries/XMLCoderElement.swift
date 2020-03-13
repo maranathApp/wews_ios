@@ -19,7 +19,7 @@ struct XMLCoderElement: Equatable {
         ("<", "&lt;"),
         (">", "&gt;"),
         ("'", "&apos;"),
-        ("\"", "&quot;"),
+        ("\"", "&quot;")
     ]
 
     let key: String

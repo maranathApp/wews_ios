@@ -34,4 +34,3 @@ open class ViewController<ViewModel: ViewModelling>: UIViewController {
     }
     #endif
 }
-

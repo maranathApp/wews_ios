@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8323F2D6241A74C8008EC979 /* LoadingImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8323F2D5241A74C8008EC979 /* LoadingImageView.swift */; };
+		8323F2DC241A7BBE008EC979 /* placeholder.error.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8323F2DB241A7BBE008EC979 /* placeholder.error.jpg */; };
 		836DAACF2410F3FF0044D4A6 /* UIComponentKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 836DAACD2410F3FF0044D4A6 /* UIComponentKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		836DAAE32410F4320044D4A6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAAD62410F4320044D4A6 /* ViewController.swift */; };
 		836DAAE42410F4320044D4A6 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 836DAAD72410F4320044D4A6 /* CollectionViewController.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8323F2D5241A74C8008EC979 /* LoadingImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingImageView.swift; sourceTree = "<group>"; };
+		8323F2DB241A7BBE008EC979 /* placeholder.error.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = placeholder.error.jpg; sourceTree = "<group>"; };
 		836DAACA2410F3FF0044D4A6 /* UIComponentKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIComponentKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		836DAACD2410F3FF0044D4A6 /* UIComponentKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIComponentKit.h; sourceTree = "<group>"; };
 		836DAACE2410F3FF0044D4A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +51,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8323F2D7241A74D3008EC979 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				836DAAD62410F4320044D4A6 /* ViewController.swift */,
+				836DAAD72410F4320044D4A6 /* CollectionViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		8323F2D8241A74DB008EC979 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8323F2D5241A74C8008EC979 /* LoadingImageView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8323F2D9241A7B90008EC979 /* Image Assets */ = {
+			isa = PBXGroup;
+			children = (
+				8323F2DA241A7BAB008EC979 /* Images */,
+			);
+			path = "Image Assets";
+			sourceTree = "<group>";
+		};
+		8323F2DA241A7BAB008EC979 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8323F2DB241A7BBE008EC979 /* placeholder.error.jpg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		836DAAC02410F3FF0044D4A6 = {
 			isa = PBXGroup;
 			children = (
@@ -69,6 +106,7 @@
 				836DAAD52410F4320044D4A6 /* Components */,
 				836DAAD82410F4320044D4A6 /* Extensions */,
 				836DAADD2410F4320044D4A6 /* Protocols */,
+				8323F2D9241A7B90008EC979 /* Image Assets */,
 				836DAACD2410F3FF0044D4A6 /* UIComponentKit.h */,
 				836DAACE2410F3FF0044D4A6 /* Info.plist */,
 			);
@@ -78,8 +116,8 @@
 		836DAAD52410F4320044D4A6 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				836DAAD62410F4320044D4A6 /* ViewController.swift */,
-				836DAAD72410F4320044D4A6 /* CollectionViewController.swift */,
+				8323F2D7241A74D3008EC979 /* ViewControllers */,
+				8323F2D8241A74DB008EC979 /* Views */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -175,6 +213,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8323F2DC241A7BBE008EC979 /* placeholder.error.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,6 +233,7 @@
 				836DAAEB2410F4320044D4A6 /* SetupableView.swift in Sources */,
 				836DAAE62410F4320044D4A6 /* UIView+Extension.swift in Sources */,
 				836DAAE72410F4320044D4A6 /* UIViewController+Extension.swift in Sources */,
+				8323F2D6241A74C8008EC979 /* LoadingImageView.swift in Sources */,
 				836DAAE32410F4320044D4A6 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

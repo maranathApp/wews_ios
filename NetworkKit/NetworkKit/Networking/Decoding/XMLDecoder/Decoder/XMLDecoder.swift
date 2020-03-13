@@ -359,7 +359,7 @@ open class XMLDecoder {
             options.nodeDecodingStrategy.nodeDecodings(
                 forType: T.self,
                 with: decoder
-            ),
+            )
         ]
 
         defer {

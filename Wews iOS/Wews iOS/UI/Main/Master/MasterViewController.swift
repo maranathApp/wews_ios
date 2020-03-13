@@ -15,8 +15,13 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
     // MARK: - PRIVATE ATTRIBUTES
 
     private var detailViewController: DetailViewController?
+
     private let interItemSpacing: CGFloat = 16
     private let edgeSpacingInset: CGFloat = 8
+
+    private lazy var notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+
+    private var stateView: UIView?
 
     private lazy var collectionViewLayout: UICollectionViewFlowLayout = {
         let layout = UICollectionViewFlowLayout()
@@ -32,7 +37,28 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
         let view = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         view.image = UIImage(named: "logo")
         view.contentMode = .scaleAspectFit
-        
+
+        return view
+    }()
+
+    private lazy var loadingView: LoadingView = {
+        let view = LoadingView.loadNib()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
+    private lazy var emptyView: EmptyView = {
+        let view = EmptyView.loadNib()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
+        return view
+    }()
+
+    private lazy var errorView: ErrorView = {
+        let view = ErrorView.loadNib()
+        view.translatesAutoresizingMaskIntoConstraints = false
+
         return view
     }()
 
@@ -65,14 +91,8 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
 
     private func bindViewModel() {
         viewModel
-            .shouldReloadData
-            .sink { [weak collectionView] in
-                collectionView?.reloadData()
-        }
-        .store(in: &viewModel.cancellables)
-
-        viewModel
-            .viewStateChanged
+            .$viewState
+            .map({ $0.unsafelyUnwrapped })
             .sink { [weak self] state in
                 self?.handle(state: state)
         }
@@ -80,18 +100,66 @@ final class MasterViewController: CollectionViewController<MasterCollectionViewC
     }
 
     private func handle(state: ViewState) {
-        #warning("To implement")
+
+        switch state {
+        case .data:
+            stateView?.removeFromSuperview()
+            collectionView?.reloadData()
+            stateView = nil
+        case .loading:
+            stateView = loadingView
+        case .empty:
+            emptyView.setup(with: EmptyViewModel(title: viewModel.noDataMessage, reloadAction: viewModel.loadData))
+            stateView = emptyView
+        case .error(let error):
+            notificationFeedbackGenerator.notificationOccurred(.error)
+            if let reachabilityError = error as? ReachabilityError {
+                switch reachabilityError {
+                case .noNetwork:
+                    errorView.setup(with: ErrorViewModel(title: viewModel.noNetworkMessage, reloadAction: viewModel.loadData))
+                default:
+                    errorView.setup(with: ErrorViewModel(title: error.localizedDescription, reloadAction: viewModel.loadData))
+                }
+            } else {
+                errorView.setup(with: ErrorViewModel(title: error.localizedDescription, reloadAction: viewModel.loadData))
+            }
+            stateView = errorView
+        }
+
+        guard let stateView = self.stateView else  {
+            self.stateView?.removeFromSuperview()
+            
+            return
+        }
+
+        view.insertSubview(stateView, aboveSubview: view)
+        NSLayoutConstraint.activate([
+            stateView.topAnchor.constraint(equalTo: view.topAnchor),
+            stateView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            stateView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            stateView.rightAnchor.constraint(equalTo: view.rightAnchor)])
+    }
+
+    private func presentAlertController(title: String, message: String, cancelActionTitle: String, cancelHandler: ((UIAlertAction) -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: cancelActionTitle, style: .cancel, handler: cancelHandler))
+        present(alertController, animated: true)
     }
 
     // MARK: UICOLLECTIONVIEWDELEGATE
 
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard viewModel.hasNetwork else {
+            notificationFeedbackGenerator.notificationOccurred(.error)
+            return presentAlertController(title: viewModel.alertTitle, message: viewModel.noNetworkMessage, cancelActionTitle: viewModel.alertOkayButtonTitle)
+        }
+
         let item = viewModel.getItem(for: indexPath)
         detailViewController?.viewModel.setUp(with: item.title ?? "", description: item.description, link: item.link)
 
         if UIDevice.type == .iPhone, let detailViewController = self.detailViewController {
+            // This navigation should have normally be done inside the respective coordinator but for UISplitViewController related reasons and for simplicity, I decided to do it here.
             navigationController?.pushViewController(detailViewController, animated: true)
-            #warning("Do in Coordinator")
         }
     }
 

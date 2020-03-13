@@ -1,0 +1,16 @@
+/* 
+  Localizable.strings
+  Wews iOS
+
+  Created by Frezy Mboumba on 3/12/20.
+  Copyright © 2020 Maranathapp. All rights reserved.
+*/
+
+// MARK: - COMMON
+
+"common.noData" = "There is no data. Please try again later.";
+"common.noInternet" = "There is no internet 📡. Please check this out and try again later.";
+"common.okay" = "Got it 👍🏼";
+"common.cancel" = "Cancel";
+
+"common.error.title" = "😬 OOPS 😬";

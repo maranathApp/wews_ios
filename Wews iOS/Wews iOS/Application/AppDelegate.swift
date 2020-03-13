@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    // MARK: UISceneSession Lifecycle
+    // MARK: UISCENESESSION LIFECYCLE
 
     @available(iOS 13.0, *)
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {

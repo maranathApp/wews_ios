@@ -105,7 +105,7 @@ struct XMLKeyedEncodingContainer<K: CodingKey>: KeyedEncodingContainerProtocol {
         let box = try encode(encoder, value)
 
         let oldSelf = self
-        let attributeEncoder: (T, Key, Box) throws -> () = { value, key, box in
+        let attributeEncoder: (T, Key, Box) throws -> Void = { value, key, box in
             guard let attribute = box as? SimpleBox else {
                 throw EncodingError.invalidValue(value, EncodingError.Context(
                     codingPath: [],
@@ -117,7 +117,7 @@ struct XMLKeyedEncodingContainer<K: CodingKey>: KeyedEncodingContainerProtocol {
             }
         }
 
-        let elementEncoder: (T, Key, Box) throws -> () = { _, key, box in
+        let elementEncoder: (T, Key, Box) throws -> Void = { _, key, box in
             oldSelf.container.withShared { container in
                 container.elements.append(box, at: oldSelf.converted(key).stringValue)
             }

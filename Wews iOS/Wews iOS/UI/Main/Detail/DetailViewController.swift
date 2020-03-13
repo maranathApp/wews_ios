@@ -65,7 +65,7 @@ final class DetailViewController: ViewController<DetailViewModel> {
         navigationController?.navigationBar.barTintColor = .black
         navigationController?.navigationBar.tintColor = .white
         navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.white]
-        
+
         view.addSubview(progressView)
         view.addSubview(webView)
 
@@ -77,7 +77,7 @@ final class DetailViewController: ViewController<DetailViewModel> {
             webView.topAnchor.constraint(equalTo: progressView.bottomAnchor),
             webView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
             webView.leftAnchor.constraint(equalTo: view.leftAnchor),
-            webView.rightAnchor.constraint(equalTo: view.rightAnchor),
+            webView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
     }
 
@@ -107,7 +107,7 @@ final class DetailViewController: ViewController<DetailViewModel> {
 
     // MARK: - INTERNAL METHODS
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey: Any]?, context: UnsafeMutableRawPointer?) {
         switch WKWebViewKeyPath(rawValue: "estimatedProgress") ?? .none {
         case .estimatedProgress:
             DispatchQueue.main.async { [weak self] in

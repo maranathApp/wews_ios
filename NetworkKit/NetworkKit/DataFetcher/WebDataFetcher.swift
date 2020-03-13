@@ -2,7 +2,7 @@
 //  WebDataFetcher.swift
 //  NetworkKit
 //
-//  Created by MaranathApp on 3/05/2020.
+//  Created by Frezy VAMBE on 3/05/2020.
 //  Copyright © 2020 MaranathApp. All rights reserved.
 //
 

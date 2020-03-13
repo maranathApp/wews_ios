@@ -1,6 +1,6 @@
 //
 //  RSSFeedService.swift
-//  CoreServices
+//  Core
 //
 //  Created by Frezy Mboumba on 3/9/20.
 //  Copyright © 2020 Maranathapp. All rights reserved.
@@ -10,7 +10,6 @@ import Foundation
 import NetworkKit
 import Combine
 
-#warning("To be tested")
 public protocol RSSFeedServicing {
     func call(parameter: RSSFeedServiceParameter) -> AnyPublisher<RSS, Error>
 }

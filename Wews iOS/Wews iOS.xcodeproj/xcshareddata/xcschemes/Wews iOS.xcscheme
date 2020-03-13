@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Wews iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "8323F2E0241A849F008EC979"
+               BuildableName = "NetworkKitTests.xctest"
+               BlueprintName = "NetworkKitTests"
+               ReferencedContainer = "container:../NetworkKit/NetworkKit.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

@@ -1,6 +1,6 @@
 //
 //  MediaContentTests.swift
-//  CoreModelsTests
+//  CoreTests
 //
 //  Created by Frezy Mboumba on 3/9/20.
 //  Copyright © 2020 Maranathapp. All rights reserved.

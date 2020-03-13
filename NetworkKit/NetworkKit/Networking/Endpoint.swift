@@ -2,7 +2,7 @@
 //  EndPoint.swift
 //  NetworkKit
 //
-//  Created by MaranathApp on 3/05/2020.
+//  Created by Frezy VAMBE on 3/05/2020.
 //  Copyright © 2020 MaranathApp. All rights reserved.
 //
 
@@ -15,7 +15,6 @@ public enum HttpMethod: String {
     case POST
 }
 
-#warning("To be tested")
 public protocol Endpoint {
     /// Base url for the current endPoint. Can be specifed for all routes in the extension, and/or seperatly for each route
     var baseURLString: String { get }

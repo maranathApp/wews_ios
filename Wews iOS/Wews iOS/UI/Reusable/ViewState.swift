@@ -1,8 +1,8 @@
 //
-//  Statable.swift
+//  ViewState.swift
 //  Wews iOS
 //
-//  Created by Frezy Mboumba on 3/10/20.
+//  Created by Frezy Mboumba on 3/11/20.
 //  Copyright © 2020 Maranathapp. All rights reserved.
 //
 
@@ -12,8 +12,5 @@ enum ViewState {
     case error(Error)
     case data
     case empty
-}
-
-protocol Statable {
-    var viewState: ViewState { get }
+    case loading
 }
