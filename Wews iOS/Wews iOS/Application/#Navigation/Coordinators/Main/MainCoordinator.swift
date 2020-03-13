@@ -42,7 +42,7 @@ final class MainCoordinator: Coordinator {
 
 extension MainCoordinator: MasterViewControllerDelegate {
     func didPresentDetailViewController(_ vc: MasterViewController, detailViewModel: DetailViewModel) {
-        detailViewController.viewModel.setUp(with: detailViewModel.title ?? "", imageURL: detailViewModel.imageURL, description: detailViewModel.description ?? "", link: detailViewModel.link)
+        detailViewController.viewModel.setUp(with: detailViewModel)
 
         if UIDevice.type == .iPhone {
             vc.navigationController?.pushViewController(detailViewController, animated: true)

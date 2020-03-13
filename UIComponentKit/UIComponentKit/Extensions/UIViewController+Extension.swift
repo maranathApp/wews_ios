@@ -8,7 +8,6 @@
 
 import UIKit.UIViewController
 
-#warning("To be tested")
 public extension UIViewController {
     var name: String {
         return String(describing: self)

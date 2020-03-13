@@ -94,12 +94,7 @@ final class MasterViewModel: MasterViewModelling, ObservableObject {
     }
 
     func getDetailViewModel(for indexPath: IndexPath) -> DetailViewModel {
-        return dataSource.map({ model -> DetailViewModel in
-            let detailViewModel = DetailViewModel()
-            detailViewModel.setUp(with: model.title ?? "", imageURL: model.imageURL, description: model.description, link: model.link)
-
-            return detailViewModel
-        })[indexPath.row]
+        return dataSource.map({ DetailViewModel(title: $0.title ?? "", imageURL: $0.imageURL, description: $0.description, link: $0.link) })[indexPath.row]
     }
 }
  

@@ -8,7 +8,6 @@
 
 import UIKit.UIView
 
-#warning("To be tested")
 extension UIView: NibLoadable, ReusableView {
     var name: String {
         return String(describing: self)

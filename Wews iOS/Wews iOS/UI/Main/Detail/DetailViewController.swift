@@ -163,7 +163,7 @@ final class DetailViewController: ViewController<DetailViewModel> {
     }
 
     @objc private func presentWebViewController() {
-        delegate?.didPresentWebViewController(self, with: viewModel.getWebViewModel())
+        delegate?.didPresentWebViewController(self, with: viewModel.webViewModel)
     }
 
     private func showEmptyView(_ shouldShow: Bool) {

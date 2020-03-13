@@ -83,6 +83,8 @@ public class LoadingImageView: UIImageView {
             return
         }
 
+        image = nil
+
         URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             if error != nil {
                 self?.indicatorView.stopAnimating()

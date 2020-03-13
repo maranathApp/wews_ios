@@ -24,6 +24,7 @@ final class DetailViewModel: ViewModelling, ObservableObject {
     var link: URL?
 
     var cancellables = Set<AnyCancellable>()
+    var webViewModel: WebViewModel { WebViewModel(title: title ?? "", link: link) }
 
     // MARK: - INITIALIZERS
 
@@ -32,16 +33,22 @@ final class DetailViewModel: ViewModelling, ObservableObject {
         self.unselectedCellTitle = "detail.unselectedCell.title".localized
     }
 
-    // MARK: - INTERNAL METHODS
-
-    func setUp(with title: String, imageURL: URL?, description: String, link: URL?) {
+    init(title: String, imageURL: URL?, description: String, link: URL?) {
         self.title = title
         self.imageURL = imageURL
         self.link = link
         self.description = description
+
+        self.readArticleTitle = "master.readArticle.buttonTitle".localized
+        self.unselectedCellTitle = "detail.unselectedCell.title".localized
     }
 
-    func getWebViewModel() -> WebViewModel {
-        return WebViewModel(title: title ?? "", link: link)
+    // MARK: - INTERNAL METHODS
+
+    func setUp(with viewModel: DetailViewModel) {
+        self.title = viewModel.title
+        self.imageURL = viewModel.imageURL
+        self.link = viewModel.link
+        self.description = viewModel.description
     }
 }
